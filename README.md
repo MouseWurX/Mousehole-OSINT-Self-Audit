@@ -1,6 +1,7 @@
 # Privacy Policy — Mousehole
 
 **App:** Mousehole
+**Package name:** `ca.mousewurx.mousehole`
 **Developer:** MouseWurX
 **Last updated:** 25 October 2026
 
@@ -37,6 +38,8 @@ MouseWurX. Specifically:
   never leaves the phone.
 - Your router's hardware address (BSSID) goes to WiGLE, and only when you open
   Wi-Fi on the Map.
+- Your public IP address goes to IP-lookup services when you check your home
+  connection.
 - A photo you choose for reverse image search has its metadata stripped first,
   then you hand it to the app you pick.
 
@@ -46,21 +49,36 @@ IP from them.
 
 ## Services a check may contact
 
-Depending on which tools you use: XposedOrNot and Have I Been Pwned (breaches,
-malware logs and Pwned Passwords), public DNS-over-HTTPS resolvers and RDAP
-registries, IP and network lookup services such as IPinfo and Shodan, WiGLE,
-GitHub, the roughly 690 public websites in the WhatsMyName list, and Google Play
-Billing if you buy Mousehole Pro. Services that need an API key are only
-contacted if you have added that key yourself.
+Which ones depends on the tools you use:
+
+- **Breaches and leaks:** XposedOrNot, Have I Been Pwned, Pwned Passwords.
+- **Public profiles:** the roughly 690 websites in the WhatsMyName list, plus
+  GitHub, GitLab, Mastodon, Bluesky and Keybase.
+- **Domains:** Cloudflare's DNS-over-HTTPS resolver, rdap.org and crt.sh.
+- **Your connection:** ipify, ipwho.is, IPinfo and Shodan.
+- **Your Wi-Fi:** WiGLE.
+- **Local incidents:** RansomLook, which is asked for every recent post and
+  matched on your phone, so it is never told which city is yours.
+- **Connection tests:** Google's captive-portal endpoint, which carries nothing
+  about you.
+- **Buying Pro:** Google Play Billing.
+
+Services that need an API key are only contacted if you added that key yourself.
+News searches (GDELT, Google News) and the other "check it yourself" buttons
+open in your browser instead, so the app isn't the one making the request.
 
 ## What never leaves your phone
 
 Photos and files you pick, the list of apps installed on your phone (used by App
 Permission Review), Bluetooth tags detected nearby, your clipboard contents,
-your cities, your saved results and your exposure score. The app does not read
-or record your location. Wi-Fi on the Map asks for location permission only
-because Android will not reveal the connected router's address to an app without
-it.
+your name, your phone number, your cities, your saved results and your exposure
+score. The app does not read or record your location. Wi-Fi on the Map asks for
+location permission only because Android will not reveal the connected router's
+address to an app without it.
+
+Some screens offer buttons that open a search in your browser, for example news
+about your city. Those are your own searches: the site sees them and they stay
+in your browser history, but the app never makes the request.
 
 ## Permissions and why
 

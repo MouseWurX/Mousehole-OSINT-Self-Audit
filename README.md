@@ -100,4 +100,4 @@ release.
 
 ## Contact
 
-MouseWurX — 
+MouseWurX — support@mousewurx.ca

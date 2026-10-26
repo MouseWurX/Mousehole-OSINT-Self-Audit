@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mousehole privacy policy</title><style>
+:root{--bg:#0B1410;--surface:#12201A;--line:#24392F;--fg:#DCE6DF;--muted:#8FA69A;--accent:#5FBF8C;--gold:#E2B23A;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem max(16px,env(safe-area-inset-left)) 4rem}
+h1,h2{line-height:1.2}h2{margin-top:2rem;border-top:1px solid var(--line);padding-top:1rem}
+a{color:var(--accent)}mark{background:var(--gold);color:#11231C;padding:0 .2em}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:36rem;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:.5rem .7rem;border-bottom:1px solid var(--line)}
+footer{color:var(--muted);font-size:.9rem;margin-top:3rem}
+</style></head><body><main>
+<h1 id="privacy-policy-for-mousehole">Privacy Policy for Mousehole</h1>
+<p><em>Effective <mark>[date]</mark></em></p>
+<p>Mousehole (“the app”) is a personal security tool made by MouseWurX,
+a sole proprietorship in Alberta, Canada (“we”). It helps you check what
+information about <strong>you</strong> is exposed online and on your
+phone. This policy explains what happens to your information when you
+use it.</p>
+<h2 id="the-short-version">The short version</h2>
+<ul>
+<li>We don’t run a server, and we don’t collect, see, sell or share any
+of your information.</li>
+<li>The app has no ads, no analytics, no tracking and no account.</li>
+<li>Everything you enter and every result stays on your phone,
+encrypted.</li>
+<li>When you run a check, the app contacts the outside service that does
+that check, and sends it only what that check needs. Those services are
+listed below.</li>
+<li>Uninstalling the app deletes everything.</li>
+</ul>
+<h2 id="what-the-app-stores-on-your-phone">What the app stores on your
+phone</h2>
+<ul>
+<li><strong>Your profile:</strong> the names, email addresses,
+usernames, phone numbers, domains and cities you choose to enter.</li>
+<li><strong>Results:</strong> findings, breach and leak records, your
+answers to “Is this you?”, re-check history and your Account Cleanup
+status.</li>
+<li><strong>API keys</strong> you add for optional services (Have I Been
+Pwned, IPinfo, Shodan, GitHub).</li>
+</ul>
+<p>This information is encrypted with keys held in your phone’s Android
+Keystore, which never leave the device. Sensitive leaked values are
+hidden until you unlock them with your fingerprint or screen lock. The
+app turns off Android cloud backup and phone-to-phone transfer for its
+data, so none of it is copied to Google’s servers or another phone.</p>
+<h2 id="what-the-app-sends-and-to-whom">What the app sends, and to
+whom</h2>
+<p>A check only runs when you start it, or when you turn on automatic
+checks or re-checks. Each request goes directly from your phone to the
+service over an encrypted (HTTPS) connection. The one exception is Home
+Exposure’s router check, which talks only to your own router inside your
+home network (see below). Like any website, each service can see your
+phone’s IP address and the app’s name in the request. Their own privacy
+policies apply to what they receive.</p>
+<div class="tbl">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 32%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Service contacted</th>
+<th>What is sent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Breach Check</td>
+<td>XposedOrNot; Have I Been Pwned only if you add your own key</td>
+<td>The email address being checked</td>
+</tr>
+<tr class="even">
+<td>Malware Logs</td>
+<td>Have I Been Pwned, only if you add your own key</td>
+<td>The email address being checked</td>
+</tr>
+<tr class="odd">
+<td>Password Exposure</td>
+<td>Have I Been Pwned Pwned Passwords</td>
+<td>Only the first 5 characters of a scrambled (SHA-1) version of the
+password. The password itself never leaves the phone.</td>
+</tr>
+<tr class="even">
+<td>Username Search, automatic audit</td>
+<td>About 690 public websites from the WhatsMyName list</td>
+<td>The username, as part of a normal visit to each site’s public
+profile address</td>
+</tr>
+<tr class="odd">
+<td>Signed-out View, Code Footprint</td>
+<td>GitHub, GitLab, Bluesky, Keybase, your Mastodon server, your own
+website</td>
+<td>The handle or address being checked; your GitHub token if you add
+one</td>
+</tr>
+<tr class="even">
+<td>Domain / IP Lookup</td>
+<td>Cloudflare DNS, rdap.org, crt.sh, ipwho.is, IPinfo (with your
+key)</td>
+<td>The domain or IP address being checked</td>
+</tr>
+<tr class="odd">
+<td>Home Exposure, Network Safety, “what websites see”</td>
+<td>ipify, ipwho.is; Shodan only if you add your own key</td>
+<td>Your public IP address</td>
+</tr>
+<tr class="even">
+<td>Home Exposure (router check)</td>
+<td>Your own router, over UPnP on your home Wi-Fi. Nothing goes to the
+internet.</td>
+<td>A request for the list of ports the router has opened</td>
+</tr>
+<tr class="odd">
+<td>Local Breaches</td>
+<td>RansomLook; the GDELT Project news search only when you tap it</td>
+<td>Nothing about you to RansomLook (the app downloads its whole list of
+recent claims); the city name to GDELT</td>
+</tr>
+<tr class="even">
+<td>Site list updates</td>
+<td>GitHub (raw.githubusercontent.com)</td>
+<td>Nothing about you; the app downloads the latest list</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Some tools don’t send anything themselves but open a website in your
+browser when you tap a button, such as Reverse Image (Google Lens and
+other image search engines), Search Kit searches, data broker search and
+opt-out pages, account deletion pages, and app store links. What you do
+on those websites is covered by their policies. Reverse Image removes
+the photo’s location and camera details before you share it.</p>
+<p>The <strong>Check it yourself</strong> buttons work the same way.
+They open Have I Been Pwned, XposedOrNot, Hudson Rock, Intelligence X,
+Shodan, IPinfo, crt.sh, Google News, ransomware.live, RansomLook or
+WiGLE in your browser, on the site’s own page. The app puts what you’re
+checking (an email, username, domain, IP address, city or router ID)
+either in the page address or on your clipboard for you to paste. The
+site then sees that search, and it stays in your browser’s history. The
+app doesn’t read those pages or keep their results.</p>
+<h2 id="what-stays-on-your-phone-and-is-never-sent">What stays on your
+phone and is never sent</h2>
+<p>Photo and document metadata reading and cleaning, Photo Location
+Sweep, Bluetooth tracker detection and Tracker Following, home device
+discovery on your Wi-Fi, phone number checks, App Permission Review,
+Clipboard Cleaner, Secure Delete, Google Takeout and Meta export
+reading, scoring and advice all run entirely on the phone.</p>
+<h2 id="permissions-and-why-the-app-asks">Permissions and why the app
+asks</h2>
+<ul>
+<li><strong>Internet and network state:</strong> to run online checks
+and test your connection.</li>
+<li><strong>Nearby devices (Bluetooth):</strong> to detect tracking tags
+near you. The app tells Android it never uses Bluetooth scans to work
+out where you are. Tracker Following judges whether a tag moves with you
+from the phone’s motion sensor, not from your location, and records no
+places.</li>
+<li><strong>Location (precise and approximate):</strong> only for Wi-Fi
+on the Map. Android shows an app your router’s hardware address (BSSID)
+only if it holds location permission. The app never reads your position;
+the router’s address is sent to WiGLE only when you tap Check.</li>
+<li><strong>Photos:</strong> the app asks for no photo permission. Photo
+Location Sweep reads only the folder or the photos you pick in Android’s
+file picker, and you can make it forget the folder at any time.</li>
+<li><strong>Wi-Fi state and multicast:</strong> to find devices on your
+home network, ask your router which ports it has opened, and read your
+router’s ID.</li>
+<li><strong>Notifications and foreground services:</strong> to tell you
+about new findings and to show progress for long jobs such as tracker
+watching (which you start yourself and which stops after 8 hours) and
+free-space wiping.</li>
+<li><strong>Biometrics:</strong> to unlock hidden leaked values.</li>
+</ul>
+<p>Every permission is optional. If you say no, only the feature that
+needs it stops working.</p>
+<h2 id="searching-other-people">Searching other people</h2>
+<p>The app is made for checking yourself, and you agree to that when you
+first open it. Only enter information that belongs to you. Don’t use the
+app to look up, locate, track or watch anyone else.</p>
+<h2 id="your-consent">Your consent</h2>
+<p>Before the app runs any check, it shows what it reads and what it
+sends where, and asks you to agree. You can withdraw that at any time in
+Settings › About › Privacy; automatic checks then stop and the app asks
+again before it does anything.</p>
+<h2 id="keeping-and-deleting-your-information">Keeping and deleting your
+information</h2>
+<p>Your information stays on your phone until you delete it. You can
+clear findings and profile entries inside the app, clear the app’s
+storage in Android Settings, or uninstall the app, which removes
+everything. Because we never receive your information, we have nothing
+to delete on our side.</p>
+<h2 id="children">Children</h2>
+<p>The app is not directed at children under 13, and we don’t knowingly
+collect information from anyone, including children.</p>
+<h2 id="google-play">Google Play</h2>
+<p>If you download the app from Google Play, Google handles the download
+and any payment under its own privacy policy. If you agree to share
+crash reports with developers in your phone’s settings, Google may give
+us anonymous crash and performance statistics through Play Console.
+These don’t include what you entered in the app.</p>
+<p>If you buy Mousehole Pro, Google Play takes the payment. To know
+whether Pro is unlocked, the app asks Google Play on your phone which
+purchases your Google account owns and keeps a yes/no answer on the
+phone. We never see your card or payment details, and we don’t run a
+server that records purchases.</p>
+<h2 id="your-rights">Your rights</h2>
+<p>Canadian privacy law (PIPEDA, and Alberta’s Personal Information
+Protection Act), and laws in other places such as the EU GDPR and
+California’s CCPA, give you rights to access, correct and delete
+personal information a business holds about you. Since we hold none, any
+request will confirm that. You can contact us, or the <a
+href="https://www.priv.gc.ca/">Office of the Privacy Commissioner of
+Canada</a>, with any concern.</p>
+<h2 id="security">Security</h2>
+<p>The app encrypts stored data, uses only encrypted connections to
+online services, and keeps no copies off your phone. The router check
+uses UPnP, which routers only offer unencrypted, so the app sends it
+only to a private address on your home network and never over the
+internet. No method is perfect. If you find a security problem, please
+report it to <mark>[security email]</mark>.</p>
+<h2 id="changes-to-this-policy">Changes to this policy</h2>
+<p>If the app starts sending information anywhere new, we will update
+this page and the date at the top before that version is released, and
+mention it in the app’s release notes.</p>
+<h2 id="contact">Contact</h2>
+<p>MouseWurX<br />
+<mark>[support email]</mark><br />
+<mark>[City]</mark>, Alberta, Canada</p>
+
+<footer>MouseWurX · <a href="/">mousewurx.ca</a></footer></main></body></html>
